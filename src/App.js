@@ -30,7 +30,21 @@ function App() {
     e.preventDefault(); 
     setResult((result) => result / Number(inputRef.current.value)); 
   };
- 
+  function Power(e) { 
+    
+    e.preventDefault(); 
+    setResult((result) => Math.pow(result, Number(inputRef.current.value))); 
+  };
+ function Modulus(e){
+  
+  e.preventDefault(); 
+  setResult((result) => result % Number(inputRef.current.value)); 
+ }
+ function inverse(e){
+  
+  e.preventDefault(); 
+  setResult((result) => 1 /  Number(inputRef.current.value)); 
+ }
   function resetInput(e) { 
     e.preventDefault();
     inputRef.current.value = 0;
@@ -66,6 +80,9 @@ function App() {
         <button onClick={minus}>subtract</button>
         <button onClick={times}>multiply</button>
         <button onClick={divide}>divide</button>
+        <button onClick={Power}>Power</button>
+        <button onClick={Modulus}>Modulus</button>
+        <button onClick={inverse}>Inverse</button>
         <button onClick={resetInput}>reset input</button>
         <button onClick={resetResult}>reset result</button>
       </form>
